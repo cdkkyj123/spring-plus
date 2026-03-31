@@ -25,6 +25,9 @@ public class TodoService {
     private final TodoRepository todoRepository;
     private final WeatherClient weatherClient;
 
+    // 클래스 레벨에서 readOnly가 붙어있기에 에러 발생
+    // 메서드 레벨에 따로 Transaction 설정
+    @Transactional
     public TodoSaveResponse saveTodo(AuthUser authUser, TodoSaveRequest todoSaveRequest) {
         User user = User.fromAuthUser(authUser);
 

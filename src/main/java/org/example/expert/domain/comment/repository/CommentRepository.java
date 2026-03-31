@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
-    @Query("SELECT c FROM Comment c JOIN c.user WHERE c.todo.id = :todoId")
+    // join을 join fetch로 변경하여 한 번의 쿼리로 가져오도록 수정
+    @Query("SELECT c FROM Comment c JOIN FETCH c.user WHERE c.todo.id = :todoId")
     List<Comment> findByTodoIdWithUser(@Param("todoId") Long todoId);
 }

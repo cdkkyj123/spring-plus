@@ -23,3 +23,8 @@
 
 ### 7. N+1
 - CommentRepository에서 join을 join fetch로 변경하여 한 번의 쿼리로 가져오도록 수정
+
+### 8. QueryDSL
+- 의존성 추가 후 QuerydslConfig 작성, 실행 시켜서 Q클래스 생성
+- customRepo 생성 후 impl 클래스 생성해서 상속
+- 조건에 맞게 조회 할 수 있도록 Querydsl 작성

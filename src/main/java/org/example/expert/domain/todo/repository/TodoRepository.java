@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public interface TodoRepository extends JpaRepository<Todo, Long> {
+public interface TodoRepository extends JpaRepository<Todo, Long>, TodoCustomRepository {
 
     // 각각의 기준이 null이라면 넘기고 null이 아니라면 조건으로서 조회
     @Query("""
@@ -27,9 +27,4 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
             @Param("start") LocalDateTime start, // 수정일 기준 검색 시작
             @Param("end") LocalDateTime end // 수정일 기준 검색 끝
     );
-
-    @Query("SELECT t FROM Todo t " +
-            "LEFT JOIN t.user " +
-            "WHERE t.id = :todoId")
-    Optional<Todo> findByIdWithUser(@Param("todoId") Long todoId);
 }

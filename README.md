@@ -17,3 +17,6 @@
 
 ## 5. 코드 개선 퀴즈 - AOP의 이해
 - 실행 전 로깅이 동작해야하므로 어노테이션을 @Before로 수정
+
+## 6. JPA Cascade
+- Todo 엔티티의 managers 필드에 cascade 옵션 추가

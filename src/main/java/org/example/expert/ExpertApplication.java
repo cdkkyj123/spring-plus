@@ -9,7 +9,6 @@ import static org.springframework.data.web.config.EnableSpringDataWebSupport.Pag
 
 @SpringBootApplication
 @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO)
-@EnableJpaAuditing
 public class ExpertApplication {
 
     public static void main(String[] args) {

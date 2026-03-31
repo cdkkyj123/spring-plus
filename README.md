@@ -28,3 +28,12 @@
 - 의존성 추가 후 QuerydslConfig 작성, 실행 시켜서 Q클래스 생성
 - customRepo 생성 후 impl 클래스 생성해서 상속
 - 조건에 맞게 조회 할 수 있도록 Querydsl 작성
+
+### 9. Spring Security
+- build.gradle 의존성 추가 
+- UserDetailsImpl 작성 (Security 인증 객체)
+- UserDetailsServiceImpl 작성 (DB에서 유저 조회)
+- JwtFilter 수정
+- SecurityConfig 작성 (경로별 권한 설정)
+- AuthUserArgumentResolver 수정 (SecurityContextHolder에서 꺼내도록)
+- 기존 FilterConfig 삭제

@@ -37,3 +37,15 @@
 - SecurityConfig 작성 (경로별 권한 설정)
 - AuthUserArgumentResolver 수정 (SecurityContextHolder에서 꺼내도록)
 - 기존 FilterConfig 삭제
+
+### 10. QueryDSL을 사용하여 검색 기능 만들기
+- BooleanBuilder로 검색 조건 동적으로 추가
+- Projections.constructor로 Dto로 감싸서 반환
+- 매니저, 댓글의 수는 서브쿼리로 불러오기
+- offset과 limit으로 페이지네이션 조건 작성
+- PageImpl로 페이징
+
+### 11. Transaction 심화
+- log 엔티티, 레포지토리, 서비스 생성 (REQUIRES_NEW 적용)
+- ManagerService의 saveManager 메서드 로직에 추가
+- try-catch로 성공, 실패 시 모두 로그를 저장하도록 작성

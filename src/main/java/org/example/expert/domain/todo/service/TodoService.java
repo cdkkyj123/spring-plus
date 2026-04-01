@@ -5,6 +5,8 @@ import org.example.expert.client.WeatherClient;
 import org.example.expert.domain.common.dto.AuthUser;
 import org.example.expert.domain.common.exception.InvalidRequestException;
 import org.example.expert.domain.todo.dto.request.TodoSaveRequest;
+import org.example.expert.domain.todo.dto.request.TodoSearchRequest;
+import org.example.expert.domain.todo.dto.response.TodoPageResponse;
 import org.example.expert.domain.todo.dto.response.TodoResponse;
 import org.example.expert.domain.todo.dto.response.TodoSaveResponse;
 import org.example.expert.domain.todo.entity.Todo;
@@ -89,5 +91,13 @@ public class TodoService {
                 todo.getCreatedAt(),
                 todo.getModifiedAt()
         );
+    }
+
+    public Page<TodoPageResponse> getTodoPage(TodoSearchRequest request, Pageable pageable) {
+
+        LocalDateTime startOfDay = (request.getStart() != null) ? request.getStart().atStartOfDay() : null;
+        LocalDateTime endOfDay = (request.getEnd() != null) ? request.getEnd().atTime(LocalTime.MAX) : null;
+
+        return todoRepository.findByMultiCondition(request, pageable, startOfDay, endOfDay);
     }
 }

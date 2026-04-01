@@ -49,3 +49,19 @@
 - log 엔티티, 레포지토리, 서비스 생성 (REQUIRES_NEW 적용)
 - ManagerService의 saveManager 메서드 로직에 추가
 - try-catch로 성공, 실패 시 모두 로그를 저장하도록 작성
+
+### 12. AWS 활용
+- 탄력적 IP 할당
+![img.png](img.png)
+- RDS 보안그룹과 EC2보안그룹 연결
+![img_1.png](img_1.png)
+- 헬스체크 API 확인
+![img_3.png](img_3.png)
+- S3 버킷 생성
+![img_4.png](img_4.png)
+- S3 Upload
+![img_5.png](img_5.png)
+- S3 DownloadUrl (Presigned URL 적용)
+![img_6.png](img_6.png)
+- 프로필이 잘 조회되는 모습
+![img_7.png](img_7.png)

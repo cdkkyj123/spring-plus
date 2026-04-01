@@ -23,6 +23,9 @@ public class User extends Timestamped {
     // nickname 컬럼 추가
     @Column
     private String nickname;
+    // 프로필 이미지 컬럼 추가
+    @Column
+    private String profileImage;
 
     public User(String email, String password, UserRole userRole, String nickname) {
         this.email = email;
@@ -48,5 +51,9 @@ public class User extends Timestamped {
 
     public void updateRole(UserRole userRole) {
         this.userRole = userRole;
+    }
+
+    public void updateProfile(String profileImage) {
+        this.profileImage = profileImage;
     }
 }

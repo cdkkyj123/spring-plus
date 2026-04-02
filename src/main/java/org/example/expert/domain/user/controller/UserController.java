@@ -24,4 +24,11 @@ public class UserController {
     public void changePassword(@Auth AuthUser authUser, @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
         userService.changePassword(authUser.getId(), userChangePasswordRequest);
     }
+
+    @GetMapping("/users/search")
+    public ResponseEntity<UserResponse> searchUser(
+            @RequestParam String userNickname
+    ) {
+        return ResponseEntity.ok(userService.searchUser(userNickname));
+    }
 }

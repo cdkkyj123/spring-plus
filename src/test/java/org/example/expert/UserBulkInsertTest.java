@@ -40,7 +40,8 @@ public class UserBulkInsertTest {
                     "user" + i + "@test.com",
                     "password",
                     UserRole.USER,
-                    UUID.randomUUID().toString().substring(0, 8)
+                    // 기존 8글자 방식은 유니크하지 않을 수 있기에 수정
+                    UUID.randomUUID().toString().replace("-", "")
             );
             users.add(user);
 

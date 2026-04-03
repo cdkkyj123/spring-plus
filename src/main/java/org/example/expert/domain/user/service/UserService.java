@@ -50,6 +50,8 @@ public class UserService {
         }
     }
 
+    // 데이터를 변경하는 메서드이기에 따로 Transaction 선언
+    @Transactional
     public void updateProfile(Long userId, String profileImage) {
         User user = userRepository.findById(userId).orElseThrow(
                 () -> new InvalidRequestException("User not found")

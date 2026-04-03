@@ -59,7 +59,7 @@ public class ManagerService {
 
             return new ManagerSaveResponse(
                     savedManagerUser.getId(),
-                    new UserResponse(managerUser.getId(), managerUser.getEmail(), user.getNickname())
+                    new UserResponse(managerUser.getId(), managerUser.getEmail(), managerUser.getNickname())
             );
         } catch (Exception e) {
             // 실패 로그 기록

@@ -8,7 +8,7 @@ import org.example.expert.domain.common.entity.Timestamped;
 
 @Getter
 @Entity
-@Table(name = "logs")
+@Table(name = "log")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Log extends Timestamped {
 
